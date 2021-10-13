@@ -31,19 +31,19 @@ public interface MemberService {
 	public Member info(Member member);
 
 	/**
+	 * 회원가입 정보 추출하기
 	 * 
-	 * 
-	 * @param req
-	 * @return
+	 * @param req - 요청정보 객체
+	 * @return - 추출한 회원가입 정보
 	 */
 	public Member getJoinMember(HttpServletRequest req);
 
 	/**
+	 * 회원가입 처리
 	 * 
-	 * 
-	 * @param param
+	 * @param param - 회원가입 정보 객체
 	 */
-	public void join(Member param);
+	public void join(Member member);
 	
 	
 }

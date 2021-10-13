@@ -22,4 +22,12 @@ public interface MemberDao {
 	 */
 	public Member selectMemberByUserNo(Connection conn, Member member);
 	
+	/**
+	 * 회원가입정보 삽입하기
+	 * 
+	 * @param conn 
+	 * @param member - 회원가입 정보 객체
+	 */
+	public int insert(Connection conn, Member member);
+	
 }

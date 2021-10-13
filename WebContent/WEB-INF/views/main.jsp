@@ -19,7 +19,7 @@
 <!-- 로그인상태 -->
 <c:if test="${not empty login and login }">
    <strong>${userNick }님, 환영합니다</strong><br>
-   <button onclick='location.href="/board/list";'>마이페이지</button>
+   <button onclick='location.href="/member/mypage";'>마이페이지</button>
    <button onclick='location.href="/member/logout";'>로그아웃</button>
 </c:if>
 

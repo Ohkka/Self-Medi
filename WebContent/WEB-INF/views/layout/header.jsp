@@ -16,9 +16,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <style type="text/css">
-#header, #footer {
+#header {
    text-align: center;
-   background: #A0AFFF;
+   background: #345FF6;
+}
+#footer {
+   text-align: center;
+   background: #3D3D3D;
 }
 </style>
 

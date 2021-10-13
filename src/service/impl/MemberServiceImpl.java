@@ -1,6 +1,7 @@
 package service.impl;
 
 import java.io.UnsupportedEncodingException;
+import java.sql.Connection;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -57,19 +58,35 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Member getJoinMember(HttpServletRequest req) {
 	
+		try {
+			req.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
+		Member member = new Member();
 		
+		member.setUserId(req.getParameter("userId"));
+		member.setUserPw(req.getParameter("userPw"));
+		member.setUserName( req.getParameter("userName"));
+		member.setUserNick(req.getParameter("userNick"));
+		member.setUserEm( req.getParameter("userEm"));
+		member.setUserPh( req.getParameter("userPh"));
+		member.setUserGen( req.getParameter("userGen"));
+		member.setUserBirth( req.getParameter("userBirth"));
 		
-		return null;
+		return member;
 	}
 
 	@Override
-	public void join(Member param) {
-		
-		
-		
-		
+	public void join(Member member) {
+		Connection conn = JDBCTemplate.getConnection();
+
+		if( memberDao.insert(conn, member) > 0 ) {
+			JDBCTemplate.commit(conn);
+		} else {
+			JDBCTemplate.rollback(conn);
+		}
 	}
-	
-	
 	
 }
